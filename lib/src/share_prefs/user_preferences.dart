@@ -16,11 +16,6 @@ class UserPreferences {
 
   }
 
-  //no se utilizan estas preferencias aqui
-  // bool _secondaryColor;
-  // int _genhre;
-  // String _name;
-
   //GET y SET del genero
   get genhre {
     //si no existe, por defecto sera 1
@@ -33,7 +28,6 @@ class UserPreferences {
 
   //GET y SET del color
   get secondaryColor {
-    //si no existe, por defecto sera 1
     return _prefs.getBool('secondaryColor') ?? false;
   }
 
@@ -43,12 +37,20 @@ class UserPreferences {
 
   //GET y SET del username
   get userName {
-    //si no existe, por defecto sera 1
     return _prefs.getString('userName') ?? '';
   }
 
   set userName(String value) {
     _prefs.setString('userName', value);
+  }
+
+  //GET y SET ultima pagina
+  get lastPage {
+    return _prefs.getString('lastPage') ?? 'home';
+  }
+
+  set lastPage(String value) {
+    _prefs.setString('lastPage', value);
   }
 
 }
